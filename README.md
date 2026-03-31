@@ -1,12 +1,12 @@
-# Flutter Auth App 🔵
-
-Pantallas de autenticación modernas con la paleta de azules `#056CF2 · #3D9DF2 · #B4C4D9 · #EBEEF2`.
+# StudySync 🔵
 
 ## Estructura del proyecto
 
 ```
 lib/
 ├── main.dart
+├── assets
+    └── images                  # Logo que aparece dentro de la aplicacion
 ├── theme/
 │   └── app_theme.dart          # Colores, ThemeData, estilos globales
 ├── widgets/
@@ -27,7 +27,7 @@ lib/
 
 ## Características de diseño
 
-- 🎨 Paleta de colores consistente con `AppColors`
+- 🎨 Paleta de colores en azul
 - ✨ Animaciones de entrada (fade + slide) en cada pantalla
 - 🔒 Validación de formularios con `Form` + `GlobalKey`
 - 👁️ Toggle mostrar/ocultar contraseña
@@ -45,10 +45,3 @@ flutter pub get
 # 2. Ejecutar la app
 flutter run
 ```
-
-## Próximos pasos sugeridos
-
-- Conectar con Firebase Auth o tu backend
-- Agregar Google Sign-In / Apple Sign-In reales
-- Agregar pantalla Home después del login exitoso
-- Implementar persistencia de sesión con `shared_preferences`
