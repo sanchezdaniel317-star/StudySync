@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_app/screens/pantalla_dashboard.dart';
 import '../theme/app_theme.dart';
 import '../widgets/auth_widgets.dart';
 import 'register_screen.dart';
@@ -45,14 +46,26 @@ class _LoginScreenState extends State<LoginScreen>
     super.dispose();
   }
 
-  void _handleLogin() async {
-    if (_formKey.currentState!.validate()) {
-      setState(() => _isLoading = true);
-      await Future.delayed(const Duration(seconds: 2)); // Simula request
-      setState(() => _isLoading = false);
-      // Aquí va tu lógica de autenticación
+void _handleLogin() async {
+  if (_formKey.currentState!.validate()) {
+    setState(() => _isLoading = true);
+    await Future.delayed(const Duration(seconds: 2)); // tu lógica de auth aquí
+    setState(() => _isLoading = false);
+
+    // ✅ Navega a la siguiente pantalla después de validar
+    if (mounted) {
+      Navigator.pushReplacement(
+        context,
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const PantallaDashboard(), // tu pantalla destino
+          transitionsBuilder: (_, anim, __, child) =>
+              FadeTransition(opacity: anim, child: child),
+          transitionDuration: const Duration(milliseconds: 400),
+        ),
+      );
     }
   }
+}
 
   @override
   Widget build(BuildContext context) {
