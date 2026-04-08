@@ -5,7 +5,7 @@ StudySync es una aplicación de gestión de estudios que permite a los usuarios 
 ## Estructura del proyecto
 
 ```
-taller_apis/
+StudySync/
 ├── README.md
 ├── auth_app/                    # Aplicación Flutter
 │   ├── lib/
